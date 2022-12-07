@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 11:17:09 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/12/07 17:04:08 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:16:12 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(void)
 		else if (command == "SEARCH")
 			Phonebook.showPhoneBook();
 		else if (command != "EXIT")
-			std::cout << RED << "Please enter : ADD, SEARCH or EXIT" << RESET << std::endl;
+			std::cout << BOLDRED << "Please enter : ADD, SEARCH or EXIT" << RESET << std::endl;
 	}
 	
 	return (0);
