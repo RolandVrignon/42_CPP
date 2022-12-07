@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 12:20:50 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/12/07 16:53:30 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:14:06 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,37 +21,62 @@ Contact::~Contact( void ) {
 }
 
 void Contact::addContact( void ) {
+	int i;
 	std::string firstname;
 	std::string lastname;
 	std::string darkestSecret;
 	std::string nickname;
 	std::string phoneNumber;
 	
-	
+	i = 0;
 	while (!firstname[0])
 	{
-		std::cout << "First Name : "; 
+		if (i == 0)
+			std::cout << BOLDGREEN << "First Name : " << RESET; 
+		else
+			std::cout << BOLDRED << "First Name : " << RESET; 
 		std::getline(std::cin, firstname);
+		i++;
 	}
+	i = 0;
 	while (!lastname[0])
 	{
-		std::cout << "Last Name : ";
+		if (i == 0)
+			std::cout << BOLDGREEN << "Last Name : " << RESET;
+		else
+			std::cout << BOLDRED << "Last Name : " << RESET;
 		std::getline(std::cin, lastname);	
+		i++;
 	}
+	i = 0;
 	while (!nickname[0])
 	{
-		std::cout << "Nickname : ";
+		if (i == 0)
+			std::cout << BOLDGREEN << "Nickname : " << RESET;
+		else
+			std::cout << BOLDRED << "Nickname : " << RESET;
 		std::getline(std::cin, nickname);
+		i++;
 	}
+	i = 0;
 	while (!phoneNumber[0])
 	{
-		std::cout << "PhoneNumber : ";
+		if (i == 0)
+			std::cout << BOLDGREEN << "PhoneNumber : " << RESET;
+		else
+			std::cout << BOLDRED << "PhoneNumber : " << RESET;
 		std::getline(std::cin, phoneNumber);
+		i++;
 	}
+	i = 0;
 	while (!darkestSecret[0])
 	{
-		std::cout << "Darkest Secret : ";
+		if (i == 0)
+			std::cout << BOLDGREEN << "Darkest Secret : " << RESET;
+		else
+			std::cout << BOLDRED << "Darkest Secret : " << RESET;
 		std::getline(std::cin, darkestSecret);
+		i++;
 	}
 		
 	this->complete = 1;
@@ -68,7 +93,7 @@ static void display (std::string str) {
 	int i = 0;
 	if (str.size() > 10)
 	{
-		while (str[i] && i < 10)
+		while (str[i] && i < 9)
 		{
 			std::cout << str[i];
 			i++;
@@ -101,10 +126,10 @@ void Contact::showContact ( int index ) const {
 }
 
 void Contact::showContactDetails ( void ) const {
-	std::cout << "First name   || " << this->_firstName << std::endl;
-	std::cout << "Last name    || " << this->_lastName << std::endl;
-	std::cout << "Nickname     || " << this->_nickName << std::endl;
-	std::cout << "Phone Number || " << this->_phoneNumber << std::endl;
-	std::cout << "Secret       || " << this->_darkestSecret << std::endl;
+	std::cout << BOLDWHITE << "First name   || " << RESET << this->_firstName << std::endl;
+	std::cout << BOLDWHITE << "Last name    || " << RESET << this->_lastName << std::endl;
+	std::cout << BOLDWHITE << "Nickname     || " << RESET << this->_nickName << std::endl;
+	std::cout << BOLDWHITE << "Phone Number || " << RESET << this->_phoneNumber << std::endl;
+	std::cout << BOLDWHITE << "Secret       || " << RESET << this->_darkestSecret << std::endl;
 	return ;
 }
