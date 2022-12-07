@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 17:29:31 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/12/07 17:54:09 by rvrignon         ###   ########.fr       */
+/*   Updated: 2022/12/07 17:57:50 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Zombie::Zombie ( void ) {
 }
 
 Zombie::~Zombie ( void ) {
-	std::cout << "A Zombie died !" << std::endl;
+	std::cout << this->_name << " died !" << std::endl;
 }
 
 void Zombie::setName (std::string name) {
