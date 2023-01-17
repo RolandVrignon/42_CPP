@@ -5,31 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 11:17:09 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/12/08 12:48:05 by rvrignon         ###   ########.fr       */
+/*   Created: 2023/01/17 16:49:23 by rvrignon          #+#    #+#             */
+/*   Updated: 2023/01/17 19:35:17 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.class.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
-int main(void)
+int main()
 {
-	std::string command;
-	Phonebook Phonebook;
-
-	while (command != "EXIT")
-	{
-		std::cout << BOLDYELLOW << "Enter your command : " << RESET;
-		std::getline(std::cin, command);
-		if (command == "ADD")
-			Phonebook.handlePhoneBook();
-		else if (command == "SEARCH")
-			Phonebook.showPhoneBook();
-		else if (command[0] == '\0')
-			return (0);
-		else if (command != "EXIT")
-			std::cout << BOLDRED << "Please enter : ADD, SEARCH or EXIT" << RESET << std::endl;
-	}
-	
-	return (0);
+	Weapon club = Weapon("crude spiked club");
+	HumanA bob("Bob", club);
+	HumanB jim("Jim");
+	jim.setWeapon(club);
+	bob.attack();
+	jim.attack();
+	club.setType("some other type of club");
+	bob.attack();
+	jim.attack();
+	club.setType("A machine gun");
+	bob.attack();
+	jim.attack();
+	return 0;
 }
