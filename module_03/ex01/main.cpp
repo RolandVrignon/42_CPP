@@ -29,8 +29,8 @@ int main (void) {
 
     std::cout << std::endl;
 
-    ScavTrap roland;
-    ScavTrap pogba;
+    ScavTrap roland("Roland");
+    ScavTrap pogba("Pogba");
 
     roland.attack("Mauricio");
     roland.takeDamage(20);

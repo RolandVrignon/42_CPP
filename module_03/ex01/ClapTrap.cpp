@@ -6,13 +6,13 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 20:24:44 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/18 21:32:47 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/18 21:38:13 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("ScavTrap"),_hit(100), _energy(50), _attack(20) {
+ClapTrap::ClapTrap(void) : _name("ScavTrap"),_hit(0), _energy(0), _attack(0) {
     std::cout << "Claptrap ScavTrap has been created" << std::endl;
     return ;
 }
