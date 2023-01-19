@@ -6,7 +6,7 @@
 #    By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/19 14:26:57 by rvrignon          #+#    #+#              #
-#    Updated: 2023/01/19 15:21:04 by rvrignon         ###   ########.fr        #
+#    Updated: 2023/01/19 15:49:41 by rvrignon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC = 	main.cpp \
 		Dog.cpp \
 		WrongAnimal.cpp \
 		WrongCat.cpp \
+		Brain.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

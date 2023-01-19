@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:26:18 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/19 15:27:54 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:40:39 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ int main(void)
     i->makeSound(); //will output the cat sound!
     j->makeSound();
     meta->makeSound();
+    delete meta;
+    delete j;
+    delete i;
 
     std::cout << std::endl << "####################" << std::endl << "WITHOUT VIRTUAL FUNCTION" << std::endl << std::endl;
 
@@ -37,5 +40,8 @@ int main(void)
     l->makeSound(); //will output the default Animal sound!
     k->makeSound();
     metb->makeSound();
+    delete metb;
+    delete k;
+    delete l;
     return (0);
 }

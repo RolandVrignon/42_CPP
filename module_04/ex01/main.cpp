@@ -6,36 +6,60 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:26:18 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/19 15:27:54 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:36:05 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongCat.hpp"
+#include "Global.hpp"
 
-int main(void)
+int main()
 {
-    std::cout << "####################" << std::endl << "WITH VIRTUAL FUNCTION" << std::endl << std::endl;
 
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
+    // Tests to see constructor and destructor order 
+    const Animal* first = new Dog();
+    delete first;
 
-    std::cout << std::endl << "####################" << std::endl << "WITHOUT VIRTUAL FUNCTION" << std::endl << std::endl;
+    std::cout << std::endl;
+    
+    const Animal* second = new Cat();
+    delete second;
+    
+    std::cout << std::endl;
+    
+    // Tests ask by subject 
+    Animal* animals[10];
+    
+    for (int i = 0; i < 10; i++) {
+        if (i % 2 == 0)
+            animals[i] = new Dog();
+        else
+            animals[i] = new Cat();
+    }
 
-    const Animal* metb = new Animal();
-    const Animal* k = new Dog();
-    const WrongAnimal* l = new WrongCat();
-    std::cout << k->getType() << " " << std::endl;
-    std::cout << l->getType() << " " << std::endl;
-    l->makeSound(); //will output the default Animal sound!
-    k->makeSound();
-    metb->makeSound();
-    return (0);
+    for (int i = 0; i < 10; i++) {
+        delete animals[i];
+    }
+
+    std::cout << std::endl;
+
+    // Test that copy is really deep
+
+    Cat leo;
+    leo.setIdea("J'ai envie de pate sheba", 1);
+    leo.setIdea("J'ai envie de boire", 2);
+    leo.setIdea("En fait non je vais dormir", 3);
+    leo.setIdea("Carresses moi maitre", 4);
+    std::cout << "   LEO => " << leo.makeSound() << std::endl;
+    std::cout << "   LEO => " << leo.getIdea(1) << std::endl;
+    std::cout << "   LEO => " << leo.getIdea(2) << std::endl;
+    std::cout << "   LEO => " << leo.getIdea(3) << std::endl;
+    std::cout << "   LEO => " << leo.getIdea(4) << std::endl;
+    Cat jerome;
+    jerome = leo;
+    std::cout << "   JEROME => " << jerome.makeSound() << std::endl;
+    std::cout << "   JEROME => " << jerome.getIdea(1) << std::endl;
+    std::cout << "   JEROME => " << jerome.getIdea(2) << std::endl;
+    std::cout << "   JEROME => " << jerome.getIdea(3) << std::endl;
+    std::cout << "   JEROME => " << jerome.getIdea(4) << std::endl;
+    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:20:17 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/19 15:16:51 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:36:37 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ Animal::~Animal(void) {
     return ;
 }
 
-void Animal::makeSound(void) const {
-    std::cout << "Cui Cui ??" << std::endl;
-    return ;
+std::string Animal::makeSound(void) const {
+    return "Cui Cui ?";
 }
 
 void Animal::setType(std::string type) {

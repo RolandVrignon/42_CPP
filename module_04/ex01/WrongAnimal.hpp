@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Global.hpp"
 
 #ifndef WRONG_ANIMAL_HPP
 # define WRONG_ANIMAL_HPP

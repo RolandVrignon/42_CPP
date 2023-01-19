@@ -6,12 +6,11 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:15:56 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/19 15:16:41 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:36:18 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#include "Global.hpp"
 
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
@@ -21,8 +20,8 @@ class Animal {
         Animal();
         Animal(Animal const &other);
         Animal &operator=(Animal const &other);
-        ~Animal();
-        virtual void makeSound(void) const;
+        virtual ~Animal();
+        virtual std::string makeSound(void) const;
         std::string getType(void) const;
         void setType(std::string type);
     private :

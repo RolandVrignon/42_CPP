@@ -6,11 +6,11 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:19:10 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/19 15:20:46 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:40:25 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "Global.hpp"
 
 #ifndef WRONG_WrongCat_HPP
 # define WRONG_WrongCat_HPP

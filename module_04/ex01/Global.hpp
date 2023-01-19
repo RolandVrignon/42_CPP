@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Global.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 15:08:31 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/19 17:37:26 by rvrignon         ###   ########.fr       */
+/*   Created: 2023/01/19 16:38:19 by rvrignon          #+#    #+#             */
+/*   Updated: 2023/01/19 16:44:03 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Global.hpp"
+#ifndef GLOBAL_H
+# define GLOBAL_H
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#include <iostream>
+#include <string>
 
-class Dog : public Animal {
-    public :
-        Dog();
-        Dog(Dog const & other);
-        Dog &operator=(Dog const & other);
-        ~Dog();
-        virtual std::string makeSound(void) const;
-        std::string getIdea(int nb) const;
-        void        setIdea(std::string idea, int nb);
-    private :
-        Brain* _brain;
-};
+#include "Animal.hpp"
+#include "WrongAnimal.hpp"
+#include "Brain.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
 
 #endif
