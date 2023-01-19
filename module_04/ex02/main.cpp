@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:26:18 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/19 17:43:23 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/19 18:24:58 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,26 @@
 int main()
 {
 
+    // Test with Abstract Class
+    
+    const A_Animal error;
+    // std::cout << error.makeSound() << std::endl;
+    std::cout << std::endl;
+
+    
     // Tests to see constructor and destructor order 
-    const Animal* first = new Dog();
+    const A_Animal* first = new Dog();
     delete first;
 
     std::cout << std::endl;
     
-    const Animal* second = new Cat();
+    const A_Animal* second = new Cat();
     delete second;
     
     std::cout << std::endl;
     
     // Tests ask by subject 
-    Animal* animals[10];
+    A_Animal* animals[10];
     
     for (int i = 0; i < 10; i++) {
         if (i % 2 == 0)
