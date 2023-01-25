@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 20:14:28 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/25 18:59:02 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/25 21:16:39 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ Form &Form::operator=(Form const &other) {
 
 std::ostream& operator<<(std::ostream &out, Form const &in)
 {
-    if (in.isSigned()) {
-        out << "Form \"" << in.getName() << "\" can be signed at grade " << in.getGradeToSign() << " and can be executed at grade " << in.getGradeToExecute() << ". Form has been signed.";
+    if (in.getSigned()) {
+        out << "Form \"" << in.getName() << "\" can be signed at grade " << in.getGradeToSign() << " and can be executed at grade " << in.getGradeToExecute() << ". Form has been signed";
     } else {
         out << "Form \"" << in.getName() << "\" can be signed at grade " << in.getGradeToSign() << " and can be executed at grade " << in.getGradeToExecute() << ". Form hasn't been signed yet.";
     }
@@ -91,7 +91,7 @@ Form::~Form() {
     std::cout << "Default Destructor called, bye bye boring form" << std::endl;
 }
 
-// Accessors
+// Accessors // Settors
 
 std::string Form::getName() const {
     return (this->_name);
@@ -105,7 +105,11 @@ int         Form::getGradeToExecute() const {
     return (this->_gradeToExecute);
 }
 
-bool        Form::isSigned() const {
+void Form::setSignTrue() {
+    this->_sign = true;
+}
+
+bool        Form::getSigned() const {
     if (this->_sign)
         return true;
     return false;
@@ -115,7 +119,7 @@ bool        Form::isSigned() const {
 
 void Form::beSigned(const class Bureaucrat &Bureaucrat) {
     try {
-        if (this->isSigned()) {
+        if (this->getSigned()) {
             throw Form::AlreadySigned();
         } else if (Bureaucrat.getGrade() <= this->getGradeToSign() && Bureaucrat.getGrade() >= 1) {
             this->_sign = true;
@@ -133,6 +137,16 @@ void Form::beSigned(const class Bureaucrat &Bureaucrat) {
     }
 }
 
-void Form::setSignTrue() {
-    this->_sign = true;
+void	Form::execute(const class Bureaucrat &executor) const {
+	try {
+        if (this->getSigned() && executor.getGrade() <= this->getGradeToExecute()) {
+            std::cout << executor.getName() << " executed " << this->getName() << std::endl;
+            exec_form();
+        } else {
+            throw Form::UnableToExecuteForm();
+        }
+    } catch (Form::UnableToExecuteForm &e) {
+        e.error();
+    }
+    return ;
 }

@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 18:29:41 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/25 19:03:44 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/25 21:10:07 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Bureaucrat {
         void        beRetrograded();
         void        bePromoted();
         void        signForm(class Form &form);
+        void        executeForm(Form const &form) const;
 
         class GradeTooHighException
         {

@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 18:32:29 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/25 19:02:55 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/25 21:26:21 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,13 +94,25 @@ void Bureaucrat::beRetrograded() {
 }
 
 void Bureaucrat::signForm(Form &form) {
-    if (form.isSigned()) {
+    if (form.getSigned()) {
         std::cout << this->getName() << " couldn't sign " << form.getName() << " because form is already signed." << std::endl;
     } else if (this->_grade <= form.getGradeToSign()) {
         form.setSignTrue();
         std::cout << this->getName() << " signed " << form.getName() << std::endl;
     } else {
         std::cout << this->getName() << " couldn't sign " << form.getName() << " because grade is too low." << std::endl;
+    }
+    return ;
+}
+
+void Bureaucrat::executeForm(Form const &form) const {
+    if (form.getSigned() && this->_grade <= form.getGradeToExecute()) {
+        std::cout << this->getName() << " executed " << form.getName() << std::endl;
+        form.exec_form();
+    } else if (!form.getSigned()) {
+        std::cout << this->getName() << " couldn't execute " << form.getName() << " because form isn't signed" << std::endl;
+    } else {
+        std::cout << this->getName() << " couldn't execute " << form.getName() << " because grade is too low." << std::endl;
     }
     return ;
 }
