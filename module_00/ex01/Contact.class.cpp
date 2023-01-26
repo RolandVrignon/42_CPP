@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 12:20:50 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/12/07 17:14:06 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/26 14:24:37 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,22 +102,18 @@ static void display (std::string str) {
 	}
 	else
 	{
-		while (str[i] && i < 10)
-		{
-			std::cout << str[i];
-			i++;
-		}
-		while (i < 10)
-		{
+		int size = str.size();
+		while (size != 10) {
 			std::cout << " ";
-			i++;
+			size++;
 		}
+		std::cout << str;
 		std::cout << "|";
 	}
 }
 
 void Contact::showContact ( int index ) const {
-	std::cout << index + 1 << "         |";
+	std::cout << "         " << index + 1 << "|";
 	display(this->_firstName);
 	display(this->_lastName);
 	display(this->_nickName);

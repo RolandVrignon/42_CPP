@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 11:40:37 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/12/07 17:08:16 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/26 14:43:07 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void Phonebook::handlePhoneBook ( void ){
 	return ;
 }
 
-void Phonebook::showPhoneBook ( void ){
+bool Phonebook::showPhoneBook ( void ){
 	int i = 0;
 	int show = 0;
 	std::string buffer;
@@ -49,12 +49,13 @@ void Phonebook::showPhoneBook ( void ){
 	if (i == 0)
 	{
 		std::cout << BOLDRED << "There is nobody in your phoneBook, please ADD someone :(" << RESET << std::endl;
-		return ;
+		return true;
 	}
 	while (!show)
 	{
 		std::cout << BOLDYELLOW << "Enter Index of the contact : " << RESET;
-		std::getline(std::cin, buffer);
+		if (!std::getline(std::cin, buffer))
+			return false;
 		i = buffer[0] - '0';
 		if (i > this->_capacity || !_contact[i - 1].complete || buffer[1])
 			std::cout << BOLDRED << "Invalid Index" << RESET << std::endl;
@@ -62,4 +63,5 @@ void Phonebook::showPhoneBook ( void ){
 			show = 1;
 	}
 	_contact[i - 1].showContactDetails();
+	return true;
 }

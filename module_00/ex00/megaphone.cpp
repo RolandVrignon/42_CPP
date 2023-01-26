@@ -6,13 +6,11 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:24:11 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/12/06 15:25:46 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/26 14:13:04 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
-using namespace std;
 
 int main(int ac, char **av)
 {
@@ -23,12 +21,12 @@ int main(int ac, char **av)
 			for (int j = 0; av[i][j]; j++)
 			{
 				av[i][j] = toupper(av[i][j]);
-				cout << av[i][j];
+				std::cout << av[i][j];
 			}
 		}
-		cout << endl;
+		std::cout << endl;
 	}
 	else
-    	cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
+    	std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
     return 0;
 }

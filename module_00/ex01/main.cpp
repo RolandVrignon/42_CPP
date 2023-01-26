@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 11:17:09 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/12/08 12:48:05 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/26 14:44:35 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,14 @@ int main(void)
 	while (command != "EXIT")
 	{
 		std::cout << BOLDYELLOW << "Enter your command : " << RESET;
-		std::getline(std::cin, command);
+		if (!std::getline(std::cin, command))
+			break ;
 		if (command == "ADD")
 			Phonebook.handlePhoneBook();
-		else if (command == "SEARCH")
-			Phonebook.showPhoneBook();
+		else if (command == "SEARCH") {
+			if (!Phonebook.showPhoneBook())
+				return (0);
+		}
 		else if (command[0] == '\0')
 			return (0);
 		else if (command != "EXIT")
