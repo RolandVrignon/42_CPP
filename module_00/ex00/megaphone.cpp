@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 15:24:11 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/26 14:13:04 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:17:01 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(int ac, char **av)
 				std::cout << av[i][j];
 			}
 		}
-		std::cout << endl;
+		std::cout << std::endl;
 	}
 	else
     	std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
