@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 11:40:37 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/26 14:43:07 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:22:18 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Phonebook::~Phonebook( void ) {
 	return;
 }
 
-void Phonebook::handlePhoneBook ( void ){
+bool Phonebook::handlePhoneBook ( void ){
 	int i = 0;
 	
 	while (_contact[i].complete == 1 && i < this->_capacity - 1)
@@ -32,8 +32,9 @@ void Phonebook::handlePhoneBook ( void ){
 		i = this->_latest;
 		this->_latest += 1;
 	}
-	_contact[i].addContact();
-	return ;
+	if (_contact[i].addContact())
+		return true;
+	return false;
 }
 
 bool Phonebook::showPhoneBook ( void ){

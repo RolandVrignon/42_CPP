@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 12:21:50 by rvrignon          #+#    #+#             */
-/*   Updated: 2022/12/07 17:05:39 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:22:24 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 class Contact {
 public :
 	int			complete;
-	void		addContact( void );
+	bool		addContact( void );
 	void		showContact ( int index ) const;
 	void		showContactDetails ( void ) const;
 	Contact( void );

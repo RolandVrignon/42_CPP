@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 11:27:00 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/26 14:44:52 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:21:41 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 class Phonebook {
 public :
-	void		handlePhoneBook( void );
+	bool		handlePhoneBook( void );
 	bool		showPhoneBook (void);
 	Phonebook( void );
 	~Phonebook( void );

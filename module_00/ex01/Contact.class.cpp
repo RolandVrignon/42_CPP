@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 12:20:50 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/26 14:24:37 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:22:58 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Contact::~Contact( void ) {
 	return;
 }
 
-void Contact::addContact( void ) {
+bool Contact::addContact( void ) {
 	int i;
 	std::string firstname;
 	std::string lastname;
@@ -35,7 +35,8 @@ void Contact::addContact( void ) {
 			std::cout << BOLDGREEN << "First Name : " << RESET; 
 		else
 			std::cout << BOLDRED << "First Name : " << RESET; 
-		std::getline(std::cin, firstname);
+		if (!std::getline(std::cin, firstname))
+			return false;
 		i++;
 	}
 	i = 0;
@@ -45,7 +46,8 @@ void Contact::addContact( void ) {
 			std::cout << BOLDGREEN << "Last Name : " << RESET;
 		else
 			std::cout << BOLDRED << "Last Name : " << RESET;
-		std::getline(std::cin, lastname);	
+		if (!std::getline(std::cin, lastname))
+			return false;
 		i++;
 	}
 	i = 0;
@@ -55,7 +57,8 @@ void Contact::addContact( void ) {
 			std::cout << BOLDGREEN << "Nickname : " << RESET;
 		else
 			std::cout << BOLDRED << "Nickname : " << RESET;
-		std::getline(std::cin, nickname);
+		if (!std::getline(std::cin, nickname))
+			return false;
 		i++;
 	}
 	i = 0;
@@ -65,7 +68,8 @@ void Contact::addContact( void ) {
 			std::cout << BOLDGREEN << "PhoneNumber : " << RESET;
 		else
 			std::cout << BOLDRED << "PhoneNumber : " << RESET;
-		std::getline(std::cin, phoneNumber);
+		if (!std::getline(std::cin, phoneNumber))
+			return false;
 		i++;
 	}
 	i = 0;
@@ -75,7 +79,8 @@ void Contact::addContact( void ) {
 			std::cout << BOLDGREEN << "Darkest Secret : " << RESET;
 		else
 			std::cout << BOLDRED << "Darkest Secret : " << RESET;
-		std::getline(std::cin, darkestSecret);
+		if (!std::getline(std::cin, darkestSecret))
+			return false;
 		i++;
 	}
 		
@@ -86,7 +91,7 @@ void Contact::addContact( void ) {
 	this->_phoneNumber = phoneNumber;
 	this->_darkestSecret = darkestSecret;
 	
-	return ;
+	return true;
 }
 
 static void display (std::string str) {
