@@ -5,16 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/07 18:00:37 by rvrignon          #+#    #+#              #
-#    Updated: 2023/01/26 15:37:30 by rvrignon         ###   ########.fr        #
+#    Created: 2023/01/26 18:07:41 by rvrignon          #+#    #+#              #
+#    Updated: 2023/01/26 18:21:56 by rvrignon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombieHorde
+NAME = array
 
-SRC =	main.cpp \
-		Zombie.cpp \
-		zombieHorde.cpp \
+SRC = 	main.cpp \
+		Array.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

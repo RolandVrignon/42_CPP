@@ -5,16 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/12/07 18:00:37 by rvrignon          #+#    #+#              #
-#    Updated: 2023/01/26 15:37:30 by rvrignon         ###   ########.fr        #
+#    Created: 2023/01/26 16:31:20 by rvrignon          #+#    #+#              #
+#    Updated: 2023/01/26 16:50:34 by rvrignon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombieHorde
+NAME = template
 
-SRC =	main.cpp \
-		Zombie.cpp \
-		zombieHorde.cpp \
+SRC = 	main.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
