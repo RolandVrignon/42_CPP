@@ -6,7 +6,7 @@
 #    By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 18:46:19 by rvrignon          #+#    #+#              #
-#    Updated: 2022/12/07 18:46:32 by rvrignon         ###   ########.fr        #
+#    Updated: 2023/01/26 15:16:22 by rvrignon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ SRC =	main.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
