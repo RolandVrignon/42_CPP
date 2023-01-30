@@ -51,7 +51,8 @@
 		"streambuf": "cpp",
 		"cinttypes": "cpp",
 		"typeinfo": "cpp",
-		"fstream": "cpp"
+		"fstream": "cpp",
+		"typeindex": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "Disabled"
 }

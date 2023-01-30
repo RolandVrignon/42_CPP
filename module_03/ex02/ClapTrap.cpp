@@ -6,23 +6,23 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 20:24:44 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/30 21:42:51 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/30 22:20:33 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name("default"),_hit(10), _energy(10), _attack(0) {
+ClapTrap::ClapTrap() : _name("default"), _hit(10), _energy(10), _attack(0) {
     std::cout << "Default ClapTrap constructor called" << std::endl;
     return ;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name),_hit(10), _energy(10), _attack(0) {
+ClapTrap::ClapTrap(std::string name) : _name(name), _hit(10), _energy(10), _attack(0) {
     std::cout << "Claptrap " << this->_name << " has been created" << std::endl;
     return ;
 }
 
-ClapTrap::ClapTrap(std::string name, int hit, int energy, int attack) : _name(name),_hit(hit), _energy(energy), _attack(attack) {
+ClapTrap::ClapTrap(std::string name, int hit, int energy, int attack) : _name(name), _hit(hit), _energy(energy), _attack(attack) {
     std::cout << "Claptrap " << this->_name << " has been created" << std::endl;
     return ;
 }

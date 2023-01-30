@@ -16,6 +16,8 @@ int main (void) {
     ClapTrap robinson("Robinson", 30, 10, 5);
     ClapTrap dyson("Dyson");
 
+    std::cout << std::endl;
+
     robinson.attack("Mauricio");
     robinson.takeDamage(20);
     robinson.beRepaired(10);
@@ -32,6 +34,8 @@ int main (void) {
     ScavTrap roland("Roland");
     ScavTrap pogba("Pogba");
 
+    std::cout << std::endl;
+
     roland.attack("Mauricio");
     roland.takeDamage(20);
     roland.beRepaired(10);
@@ -45,4 +49,5 @@ int main (void) {
     pogba.guardGate();
     roland.guardGate();
 
+    std::cout << std::endl;
 }
