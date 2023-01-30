@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 21:11:13 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/19 13:13:02 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/30 21:45:19 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,7 @@ ScavTrap::~ScavTrap() {
     return ;
 }
 
-void ScavTrap::attack(const std::string& target)
-{
+void ScavTrap::attack(const std::string& target) {
     if (this->_energy <= 0)
     {
         std::cout << "ScavTrap " << this->_name << " has no energy left !" << std::endl;

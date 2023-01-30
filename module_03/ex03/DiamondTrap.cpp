@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 12:28:26 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/19 14:11:10 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/30 21:45:51 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,12 @@ DiamondTrap::~DiamondTrap() {
     return ;
 }
 
-void	DiamondTrap::whoAmI(void)
-{
+void	DiamondTrap::whoAmI(void) {
+    if (this->_hit <= 0) {
+        std::cout << "DiamondTrap " << this->_name << "is dead !" << std::endl;
+        return ;
+    }
 	std::cout << "DiamondTrap " << _name << " use WhoAmI !" << std::endl;
+    return ;
 }
 

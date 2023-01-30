@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 21:11:13 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/19 12:16:29 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/30 21:44:24 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,9 @@ void ScavTrap::attack(const std::string& target)
 }
 
 void ScavTrap::guardGate(void) {
+    if (this->_hit <= 0) {
+        std::cout << "ScavTrap " << this->_name << "is dead !" << std::endl;
+        return ;
+    }
     std::cout << "ScavTrap " << this->_name << " entered in Gate Keeper mode !" << std::endl;
 }

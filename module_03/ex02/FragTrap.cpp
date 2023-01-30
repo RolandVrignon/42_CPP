@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 12:15:45 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/19 12:19:00 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/30 21:44:02 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,9 @@ FragTrap::~FragTrap() {
 }
 
 void FragTrap::highFivesGuys(void) {
+    if (this->_hit <= 0) {
+        std::cout << "FragTrap " << this->_name << "is dead !" << std::endl;
+        return ;
+    }
     std::cout << "FragTrap " << this->_name << " ask for High Fives !" << std::endl;
 }

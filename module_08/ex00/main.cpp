@@ -5,27 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/18 20:23:48 by rvrignon            #+#    #+#             */
-/*   Updated: 2023/01/18 20:24:33 by rvrignon         ###   ########.fr       */
+/*   Created: 2023/01/28 15:06:51 by rvrignon          #+#    #+#             */
+/*   Updated: 2023/01/28 15:32:33 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "easyfind.hpp"
 
-int main (void) {
-    ClapTrap defaultt;
-    ClapTrap robinson("Robinson", 30, 10, 5);
-    ClapTrap dyson("Dyson", 15, 5, 2);
+int main () {
+    
+    int i;
+    
+    // Lists
+    std::list<int> lst;
 
-    robinson.attack("Mauricio");
-    robinson.takeDamage(20);
-    robinson.beRepaired(10);
-    dyson.attack("Jules");
-    dyson.attack("Victoria");
-    dyson.attack("Neymar");
-    dyson.attack("Mbappe");
-    dyson.attack("Messi");
-    dyson.takeDamage(2);
-    dyson.beRepaired(10);
+    for (i = 0; i < 20; i++)
+        lst.push_back(i);
 
+    easyfind(lst, 19);
+    easyfind(lst, 319);
+
+    // Vectors
+    std::vector<double> vector;
+    for (i = 0; i < 20; i++)
+        vector.push_back(i);
+    
+    easyfind(lst, 19);
+    easyfind(lst, 121);
+
+    return (0);
 }

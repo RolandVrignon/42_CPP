@@ -6,12 +6,17 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 20:24:44 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/18 20:59:15 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/30 21:42:57 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+
+ClapTrap::ClapTrap() : _name("default"),_hit(10), _energy(10), _attack(0) {
+    std::cout << "Default ClapTrap constructor called" << std::endl;
+    return ;
+}
 
 ClapTrap::ClapTrap(std::string name) : _name(name),_hit(10), _energy(10), _attack(0) {
     std::cout << "Claptrap " << this->_name << " has been created" << std::endl;
@@ -48,13 +53,11 @@ ClapTrap::~ClapTrap() {
 
 void ClapTrap::attack(const std::string& target)
 {
-    if (this->_energy <= 0)
-    {
+    if (this->_energy <= 0) {
         std::cout << "ClapTrap " << this->_name << "has no energy left !" << std::endl;
         return ;
     }
-    if (this->_hit <= 0)
-    {
+    if (this->_hit <= 0) {
         std::cout << "ClapTrap " << this->_name << "is dead !" << std::endl;
         return ;
     }
@@ -64,13 +67,11 @@ void ClapTrap::attack(const std::string& target)
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-    if (this->_energy <= 0)
-    {
+    if (this->_energy <= 0) {
         std::cout << "ClapTrap " << this->_name << " has no energy left !" << std::endl;
         return ;
     }
-    if (this->_hit <= 0)
-    {
+    if (this->_hit <= 0) {
         std::cout << "ClapTrap " << this->_name << "is dead !" << std::endl;
         return ;
     }
