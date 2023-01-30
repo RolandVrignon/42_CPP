@@ -14,7 +14,9 @@
 
 int main (void) {
     ClapTrap Test;
+    std::cout << std::endl;
     DiamondTrap apple("Apple");
+    std::cout << std::endl;
     DiamondTrap windows("Windows");
 
     std::cout << std::endl;
@@ -30,7 +32,8 @@ int main (void) {
     windows.takeDamage(2);
     windows.beRepaired(10);
     windows.guardGate();
-    apple.guardGate();
+    apple.highFivesGuys();
+    apple.whoAmI();
 
     std::cout << std::endl;
 }

@@ -33,6 +33,8 @@ int main (void) {
     ScavTrap roland("Roland");
     ScavTrap pogba("Pogba");
 
+    std::cout << std::endl;
+
     roland.attack("Mauricio");
     roland.takeDamage(20);
     roland.beRepaired(10);
@@ -51,17 +53,21 @@ int main (void) {
     FragTrap pavard("Pavard");
     FragTrap dembele("Dembele");
 
-    roland.attack("Mauricio");
-    roland.takeDamage(20);
-    roland.beRepaired(10);
-    pogba.attack("Jules");
-    pogba.attack("Victoria");
-    pogba.attack("Neymar");
-    pogba.attack("Mbappe");
-    pogba.attack("Messi");
-    pogba.takeDamage(2);
-    pogba.beRepaired(10);
-    pogba.guardGate();
-    roland.guardGate();
+    std::cout << std::endl;
+
+    pavard.attack("Mauricio");
+    pavard.takeDamage(20);
+    pavard.beRepaired(10);
+    dembele.attack("Jules");
+    dembele.attack("Victoria");
+    dembele.attack("Neymar");
+    dembele.attack("Mbappe");
+    dembele.attack("Messi");
+    dembele.takeDamage(2);
+    dembele.beRepaired(10);
+    dembele.highFivesGuys();
+    pavard.highFivesGuys();
+
+    std::cout << std::endl;
 
 }
