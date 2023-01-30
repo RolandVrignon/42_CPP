@@ -13,8 +13,11 @@
 #include "DiamondTrap.hpp"
 
 int main (void) {
+    ClapTrap Test;
     DiamondTrap apple("Apple");
     DiamondTrap windows("Windows");
+
+    std::cout << std::endl;
 
     apple.attack("Mauricio");
     apple.takeDamage(20);
@@ -29,4 +32,5 @@ int main (void) {
     windows.guardGate();
     apple.guardGate();
 
+    std::cout << std::endl;
 }

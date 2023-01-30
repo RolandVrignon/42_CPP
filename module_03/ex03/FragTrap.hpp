@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 12:13:14 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/19 13:10:16 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/30 22:05:35 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ class FragTrap : virtual public ClapTrap {
         FragTrap &operator=(const FragTrap &other);
         ~FragTrap();
         void highFivesGuys(void); 
-    private : 
-        std::string _name;
 };
 
 #endif 

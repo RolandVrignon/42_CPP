@@ -6,24 +6,20 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 12:28:26 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/30 21:45:51 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/30 22:12:50 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap(), _name(ClapTrap::_name + "_clap_name") {
-    this->_hit = 100;
     this->_energy = 50;
-    this->_attack = 30;
     std::cout << "DiamondTrap " << this->_name << "has been created" << std::endl;
     return ;
 }
 
 DiamondTrap::DiamondTrap(const std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name), _name(ClapTrap::_name + "_clap_name") {
-    this->_hit = 100;
     this->_energy = 50;
-    this->_attack = 30;
     std::cout << "DiamondTrap name constructor called" << std::endl;
 	std::cout << "Stats of DiamondTrap " << _name << std::endl;
 	std::cout << "Hit " << this->_hit << " Energy " << this->_energy << " Attack " << this->_attack << std::endl; 
