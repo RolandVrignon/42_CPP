@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:26:18 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/19 18:25:50 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/31 19:27:21 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 int main()
 {
 
-    // Test with Abstract Class
+    Test with Abstract Class
     
-    // const A_Animal error;
-    // std::cout << error.makeSound() << std::endl;
-    // std::cout << std::endl;
+    const A_Animal error;
+    std::cout << error.makeSound() << std::endl;
+    std::cout << std::endl;
 
     
     // Tests to see constructor and destructor order 

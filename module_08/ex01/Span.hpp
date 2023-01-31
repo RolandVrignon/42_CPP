@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 15:35:41 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/28 16:01:35 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/01/31 14:13:11 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,19 @@ class Span {
         Span(Span const &other);
         Span &operator=(Span const &other);
         ~Span();
-        void    addNumber();
-        class vectorFull {
+        void    addNumber(int x);
+        class vectorException {
             public : 
-                void error () {
+                void tooManyNumbers () {
                     std::cout << "Too many numbers added" << std::endl;
                 }
+                void notEnoughNumber () {
+                    std::cout << "Not enough numbers to find either shortest span or longest span. Default return : ";
+                }
         };
+        int shortestSpan() const;
+        int longestSpan() const;
+        void display() const;
     private :
         std::vector<int>    _vector;
         unsigned int        _max;
