@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 18:32:29 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/25 21:26:21 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/02/01 20:41:07 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Bureaucrat::Bureaucrat() : _name("John"), _grade(150) {
     std::cout << "Default Construtor called, say hello to John, his grade has been set to 150." << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int nb) : _name(name) {
+Bureaucrat::Bureaucrat(std::string name, unsigned int nb) : _name(name) {
     try {
         if (nb < 1)
             throw Bureaucrat::GradeTooHighException();
@@ -61,7 +61,7 @@ std::string Bureaucrat::getName() const {
     return this->_name;
 }
 
-int Bureaucrat::getGrade() const {
+unsigned int Bureaucrat::getGrade() const {
     return this->_grade;
 }
 

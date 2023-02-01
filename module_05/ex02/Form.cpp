@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 20:14:28 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/25 21:16:39 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/02/01 20:38:01 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,44 +19,9 @@ Form::Form() : _name("Boring Form"), _sign(false), _gradeToSign(150), _gradeToEx
     return ;
 }
 
-Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _sign(0) {
-    try {
-        if (gradeToSign > 150)
-            throw Form::GradeTooLowException();
-        if (gradeToSign < 1)
-            throw Form::GradeTooHighException();
-        if (gradeToExecute > 150)
-            throw Form::GradeTooLowException();
-        if (gradeToExecute < 1)
-            throw Form::GradeTooHighException();
-        this->_gradeToExecute = gradeToExecute;
-        this->_gradeToSign = gradeToSign;
-        std::cout << "Constructor called, new Form created !" << std::endl;
-    } catch (Form::GradeTooLowException &e) {
-        if (gradeToSign > 150)
-            this->_gradeToSign = 150;
-        else
-            this->_gradeToSign = gradeToSign;
-
-        if (gradeToExecute > 150)
-            this->_gradeToExecute = 150;
-        else
-            this->_gradeToExecute = gradeToExecute;
-
-        e.constructor();
-    } catch (Form::GradeTooHighException &e) {
-        if (gradeToSign < 1)
-            this->_gradeToSign = 1;
-        else
-            this->_gradeToSign = gradeToSign;
-
-        if (gradeToExecute < 1)
-            this->_gradeToExecute = 150;
-        else
-            this->_gradeToExecute = gradeToExecute;
-       
-        e.constructor();
-    }
+Form::Form(std::string name, unsigned int gradeToSign, unsigned int gradeToExecute) : _name(name), _sign(0), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) {
+    std::cout << "Form Assign Constructor called" << std::endl;
+    return ;
 }
 
 Form::Form(Form const &other) : _name(other._name), _sign(other._sign), _gradeToSign(other._sign), _gradeToExecute(other._gradeToExecute) { 
@@ -66,13 +31,10 @@ Form::Form(Form const &other) : _name(other._name), _sign(other._sign), _gradeTo
 // FORM Overload
 
 Form &Form::operator=(Form const &other) {
-    _sign = other._sign;
-    _gradeToExecute = other._gradeToExecute;
-    _gradeToSign = other._gradeToSign;
+    this->_sign = other._sign;
     std::cout << "Form constructor by overload" << std::endl;
     return (*this);
 }
-
 // STDOUT Overload
 
 std::ostream& operator<<(std::ostream &out, Form const &in)
@@ -97,11 +59,11 @@ std::string Form::getName() const {
     return (this->_name);
 }
 
-int         Form::getGradeToSign() const {
+unsigned int         Form::getGradeToSign() const {
     return (this->_gradeToSign);
 }
 
-int         Form::getGradeToExecute() const {
+unsigned int         Form::getGradeToExecute() const {
     return (this->_gradeToExecute);
 }
 
@@ -121,9 +83,9 @@ void Form::beSigned(const class Bureaucrat &Bureaucrat) {
     try {
         if (this->getSigned()) {
             throw Form::AlreadySigned();
-        } else if (Bureaucrat.getGrade() <= this->getGradeToSign() && Bureaucrat.getGrade() >= 1) {
+        } else if (Bureaucrat.getGrade() <= this->getGradeToSign()) {
             this->_sign = true;
-        } else if (Bureaucrat.getGrade() <= 1) {
+        } else if (Bureaucrat.getGrade() < 1) {
             throw Form::GradeTooHighException();
         } else {
             throw Form::GradeTooLowException();
