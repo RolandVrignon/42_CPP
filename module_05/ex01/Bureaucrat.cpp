@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 18:32:29 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/25 19:02:55 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/02/01 20:14:52 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ std::string Bureaucrat::getName() const {
     return this->_name;
 }
 
-int Bureaucrat::getGrade() const {
+unsigned int Bureaucrat::getGrade() const {
     return this->_grade;
 }
 

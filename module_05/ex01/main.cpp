@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 18:42:47 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/25 19:07:50 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/02/01 20:16:16 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,5 @@ int main(void) {
 	std::cout << tdf << std::endl;
 	std::cout << std::endl;
 
-	std::cout << total << std::endl;
 	return (0);
 }

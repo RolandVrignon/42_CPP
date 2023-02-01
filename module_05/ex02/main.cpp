@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 18:42:47 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/25 21:41:18 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/02/01 20:20:18 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 #include "Form.hpp"
 
 int main(void) {
+	
+	// Form test;
+	
 	std::cout << BOLDYELLOW << "### BUREAUCRATES ###" << RESET << std::endl;
 	Bureaucrat Xavier("Xavier", 1);
 	Bureaucrat Kevin("Kevin", 0);
