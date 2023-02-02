@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:06:40 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/26 19:19:09 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/02/02 15:41:14 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,13 @@ Array<T>& Array<T>::operator=(Array const &other) {
 
 template <typename T>
 T& Array<T>::operator[](const unsigned int &index) {
+    if (index < this->getSize())
+        return(this->_array[index]);      
+    throw (Array<T>::indexException());
+}
+
+template <typename T>
+T const Array<T>::operator[](const unsigned int &index) const {
     if (index < this->getSize())
         return(this->_array[index]);      
     throw (Array<T>::indexException());

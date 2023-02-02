@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:16:04 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/02/02 13:34:00 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/02/02 15:41:33 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int main (void) {
     std::cout << "##### Constructors ######" << std::endl << std::endl;
+    const Array<int> constArray(5);
     Array<int> int_empty;
     Array<int> int_filled(5);
     
@@ -28,7 +29,13 @@ int main (void) {
     Array<int> int_overload;
     int_overload = int_filled;
     
-    
+    std::cout << std::endl << "##### Get value of const array ######" << std::endl << std::endl;
+    try {
+        std::cout << constArray[0] << std::endl;
+    } catch (std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+
     std::cout << std::endl << "##### Get size of differents arrays ######" << std::endl << std::endl;
     std::cout << int_empty.getSize() << std::endl;
     std::cout << int_filled.getSize() << std::endl;
