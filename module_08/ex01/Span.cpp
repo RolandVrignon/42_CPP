@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 15:37:40 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/02/02 16:14:50 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:25:12 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,13 @@ int Span::longestSpan(void) const {
 }
 
 void Span::display() const {
+    long unsigned int i;
     std::vector<int> copy = _vector;   
     std::cout << "Span = {";
-    for (long unsigned int i = 0; i < copy.size(); i++) {
+    for (i = 0; i < copy.size() - 1; i++) {
         std::cout << copy[i] << ",";
     }
-    std::cout << "}" << std::endl;
+    std::cout << copy[i] << "}" << std::endl;
 }
 
 void Span::iteratorRange(unsigned int range) {
