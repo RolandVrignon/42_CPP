@@ -6,31 +6,16 @@
 #    By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/28 15:05:07 by rvrignon          #+#    #+#              #
-#    Updated: 2023/01/28 15:18:34 by rvrignon         ###   ########.fr        #
+#    Updated: 2023/02/02 16:14:13 by rvrignon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = easyfind
+#include "iter.hpp"
 
-SRC = 	main.cpp \
-
-OBJ = $(SRC:.cpp=.o)
-
-CXX = c++
-
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) $(SRC) -o $(NAME)
-
-clean:
-	rm -rf $(OBJ)
-
-fclean: clean
-	rm -rf $(NAME)
-
-re: fclean all
-
-.PHONY: all clean fclean re
+int main() {
+    
+    int         numbers[]       = {10, 20, 30, 56, 85};
+    std::string strings[]       = {"hjkdf", "dskj", "dsjkf"};
+    char        characters[]    = {'d', 'e', 'f'};
+    float       flotnb[]        = {42.0f, 1.2f, 985.894f};
+…}

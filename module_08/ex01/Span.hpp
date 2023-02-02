@@ -6,7 +6,7 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 15:35:41 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/31 14:13:11 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:09:27 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Span {
         Span(Span const &other);
         Span &operator=(Span const &other);
         ~Span();
+        void    iteratorRange(unsigned int range);
         void    addNumber(int x);
         class vectorException {
             public : 
@@ -41,6 +42,7 @@ class Span {
     private :
         std::vector<int>    _vector;
         unsigned int        _max;
+        unsigned int        _container;
 };
 
 #endif

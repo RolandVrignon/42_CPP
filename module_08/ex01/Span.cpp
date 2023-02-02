@@ -6,26 +6,31 @@
 /*   By: rvrignon <rvrignon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 15:37:40 by rvrignon          #+#    #+#             */
-/*   Updated: 2023/01/31 14:16:16 by rvrignon         ###   ########.fr       */
+/*   Updated: 2023/02/02 16:14:50 by rvrignon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span() : _max(5) {
+Span::Span() : _max(5), _container(5) {
+    std::vector<int> test(5, 0);
+    this->_vector = test;
     return ;
 }
 
-Span::Span(unsigned int x) : _max(x) {
+Span::Span(unsigned int x) : _max(x), _container(x) {
+    std::vector<int> test(x, 0);
+    this->_vector = test;
     return ;
 }
 
-Span::Span(Span const &other) : _vector(other._vector), _max(other._max) {
+Span::Span(Span const &other) : _vector(other._vector), _max(other._max), _container(other._container) {
     return ;
 }
 
 Span& Span::operator=(Span const &other) {
     this->_max = other._max;
+    this->_container = other._container;
     this->_vector = other._vector;
     return (*this);
 }
@@ -37,7 +42,7 @@ Span::~Span() {
 void Span::addNumber(int x) {
     try {
         if (this->_max > 0) {
-            this->_vector.push_back(x);
+            this->_vector[this->_container - this->_max] = x;
             this->_max--;   
         } else
             throw Span::vectorException();
@@ -90,4 +95,9 @@ void Span::display() const {
         std::cout << copy[i] << ",";
     }
     std::cout << "}" << std::endl;
+}
+
+void Span::iteratorRange(unsigned int range) {
+    for (std::vector<int>::iterator it = this->_vector.begin(); it != this->_vector.end(); ++it)
+        *it = (rand() % range) + 1;
 }
